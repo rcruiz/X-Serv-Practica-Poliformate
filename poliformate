@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" class="Mrphs-html sakaiUserTheme-notSet">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+            var portal = {
+                "bullhorns": {
+                    "enabled": true,
+                    "alertCount": 0
+                },
+                "chat": {
+                    "enabled": false,
+                    "pollInterval": 5000,
+                    "video" : {
+                        "enabled": true
+                    }
+                },
+                "i18n": {},
+                "loggedIn": false,
+                "portalPath": "https://poliformat.upv.es/portal",
+                "loggedOutUrl": "https://poliformat.upv.es/portal/site/!gateway-es/page/d4fdba06-3662-4820-8e8f-c151ccdea1d2", //<--Problema cierre de sesion
+                "siteId": "!gateway-es",
+                "siteTitle": "Castellano",
+                "shortDescription" : "",
+                "toolsCollapsed":  false ,
+                "locale": "es-ES" || "en-US",
+                "serverTimeMillis": "1701168619450",
+                "user": {
+                    "id": "",
+                    "eid": "",
+                    "userType": "",
+                    "siteRole": "",
+                    "impersonatorDisplayId": "",
+                    "iso8601Timestamp": "2023-11-28T11:50:19.450561",
+                    "timezone": "Europe/Madrid",
+                    "offsetFromServerMillis": "3600000"
+                },
+                "timeoutDialog" : {
+                "enabled": true,
+                "seconds": 360
+                },
+                "toggle" : {
+                    "allowauto": false,
+                    "tools": false,
+                    "sitenav": false // This is not allowed in morpheus
+                },
+                "pageScriptPath" : "/library/js/",
+                "editor" : {
+                    "type": "",
+                },
+                "portalCDNQuery" : "?version=20231114",
+                "sakaiSkin" : "morpheus-gateway",
+                "userTheme" : "sakaiUserTheme-notSet",
+                "userThemeAutoDetectDark" : true,
+                "mathJaxConfig" : {
+                    "format" : ["LaTeX","AsciiMath",]
+                },
+            };
+        </script>
+
+        <link href="/library/skin/tool_base.css?version=20231114" type="text/css" rel="stylesheet" media="screen, tty, tv, handheld, projection" />
+        <script type="text/javascript" src="/library/js/headscripts.js?version=20231114"></script>
+        <script type="text/javascript">var sakai = sakai || {}; sakai.editor = sakai.editor || {}; sakai.editor.editors = sakai.editor.editors || {}; sakai.editor.editors.ckeditor = sakai.editor.editors.ckeditor || {}; sakai.locale = sakai.locale || {};
+        sakai.locale.userCountry = 'ES';
+        sakai.locale.userLanguage = 'es';
+        sakai.locale.userLocale = 'es_ES';
+        sakai.editor.collectionId = '/';
+        sakai.editor.enableResourceSearch = false;
+        sakai.editor.contentItemUrl = false;
+        sakai.editor.siteToolSkin = '/library/skin/morpheus-gateway/tool.css';
+        sakai.editor.sitePrintSkin = '/library/skin/morpheus-gateway/print.css';
+        sakai.editor.sitePropertiesSkin = '/library/skin/morpheus-gateway/properties.css';
+        sakai.editor.editors.ckeditor.browser = 'elfinder';
+        </script>
+            <script type="text/javascript">var CKEDITOR_BASEPATH='/library/webjars/ckeditor4/4.21.0/';
+        </script>
+        <script type="text/javascript" src="/library/webjars/ckeditor4/4.21.0/ckeditor.js?version=20231114"></script>
+        <script type="text/javascript" src="/library/editor/ckeditor.launch.js?version=20231114"></script>
+
+        <!-- End of Head material from Tool -->
+        <title>PoliformaT : Castellano : Identificarse</title>
+        <!--Formulario GET PUT POST DELETE Poster -->
+        <link href="/library/skin/morpheus-gateway/tool.css?version=20231114" rel="stylesheet" media="screen, tty, tv, handheld, projection">
+        <link href="/library/skin/morpheus-gateway/print.css?version=20231114" rel="stylesheet" media="print">
+        <!--Ver redireccion del servidor e injeccion en el server Morfeo o equivalente -->
+        <link href="/library/webjars/jquery-ui/1.12.1/jquery-ui.min.css?version=20231114" rel="stylesheet" />
+        <link href="/library/js/jquery/cluetip/1.2.10/css/jquery.cluetip.css?version=20231114" rel="stylesheet">
+        <!--Final Ver JQ y JQ_P -->
+        <link href="/library/webjars/qtip2/3.0.3-1/jquery.qtip.min.css?version=20231114" rel="stylesheet">
+        <link href="/library/webjars/cropper/4.1.0/dist/cropper.min.css?version=20231114" rel="stylesheet">
+        <link href="/library/webjars/fontawesome/4.7.0/css/font-awesome.min.css?version=20231114" rel="stylesheet">
+        <link href="/library/webjars/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css?version=20231114" rel="stylesheet">
+
+        <!--Ver directorios y bibliotecas agrupar o distribuir. requirement -r _????????? : Agrupar en un fichero -->
+        <script src="/library/skin/morpheus-gateway/js/lib/modernizr.js?version=20231114"></script>
+        <script src="/library/js/sakai-message-broker.js?version=20231114"></script>
+        <script src="/library/js/sakai-lti-advantage.js?version=20231114"></script>
+        <!-- Diseño modular-->
+        <script type="module" src="/webcomponents/sakai-profile.js?version=20231114"></script>
+        <script type="module" src="/webcomponents/sakai-pronunciation-player.js?version=20231114"></script>
+        <!-- Diseño modular: Los testing TDD línea a línea difícil de comprobar-->
+        <script src="/library/webjars/momentjs/2.29.1/min/moment-with-locales.min.js?version=20231114"></script>
+        <script src="/library/webjars/dompurify/2.3.6/dist/purify.min.js?version=20231114"></script>
+        <script>
+            moment.locale(window.portal.locale);
+        </script>
+            <script src="/profile2-tool/javascript/profile2-eb.js?version=20231114"></script>
+        <!-- inlined tool header contribution -->
+
+        <!-- end inlined tool header contribution -->
+
+        <link rel="icon" href="/library/icon/favicon.ico" type="image/x-icon">
+    </head>
+
+
+    <body class="Mrphs-portalBody is-logged-out"  >
+        <noscript>
+            <span id="portal_js_warn" class="Mrphs-noJs js-warn-no-js">La plataforma funciona mucho mejor cuando JavaScript está activado. Por favor, active JavaScript en su navegador.</span>
+        </noscript>
+
+        <div class="Mrphs-portalWrapper">
+            <nav id="skipNav" class="Mrphs-skipNav" aria-label="Saltar enlace de navegación">
+                <ul class="Mrphs-skipNav__menu">
+                    <li class="Mrphs-skipNav__menuitem Mrphs-skipNav__menuitem--content">
+                        <a href="#tocontent" class="Mrphs-skipNav__link" title="ir al contenido" accesskey="c">Ir a contenido</a></li>
+                    <span class="accesibility_key">[c]</span>
+                <li class="Mrphs-skipNav__menuitem Mrphs-skipNav__menuitem--worksite"></li>
+                <li class="Mrphs-skipNav__menuitem Mrphs-skipNav__menuitem--tools">
+                    <a href="#totoolmenu" class="Mrphs-skipNav__link js-toggle-tools-nav" title="ir a la lista de herramientas" accesskey="l"></a>
+                    <i class="fa fa-bars tools-icon" aria-hidden="true"></i>
+                    Herramientas</li>
+                <span class="accesibility_key">[l]</span>
+                    <a href="https://poliformaT.upv.es/portal/site" title="Pagina de inicio o reset de la herramienta" ></a>
+                <span class="Mrphs-breadcrumb--icon icon-sakai--upv-login "></span>
+                <span>Identificarse</span></ul>
+            </nav>
+
+        <div  class="Mrphs-mainHeader is-maximized" >
+            <div class="Mrphs-topHeader">
+                <header role="banner" class="Mrphs-headerLogo">
+                    <span class="Mrphs-logos-container">
+                        <span class="Mrphs-institution-container">
+                            <a href="https://www.upv.es/">
+                                <img class="Mrphs-headerLogo--institution" src="/library/image/transparent.gif"></img>
+                            </a>
+                        </span>
+                        <a href="/portal/site/!gateway-es" class="Mrphs-headerLogo--platform">
+                            <img src="/library/image/poliformat-logo.png">
+                        </a>
+                    </span>
+
+        <nav id="mastLogin" class="Mrphs-loginNav" aria-label="Mis asignaturas/sitios y menú del perfil">
+            <ul id="loginLinks" class="Mrphs-userNav">
+                <li class="Mrphs-userNav__logout Mrphs-userNav__submenuitem-indented">
+                    <div id="loginLinksImage" class="Mrphs-loginUser">
+                        <p class="Mrphs-loginUser__menuitem">
+                            <a href="https://poliformat.upv.es/portal/login" title="Identificarse" id="loginLink1" class="Mrphs-loginUser__message" data-warning="">
+                                <i class="login-Icon"></i>
+                        <span class="Mrphs-login-Message">Identificarse</span></a></p>
+                    </div>
+        <!-- end of nav#loginLinks-->
+        </nav>
+</header>
+
+</div>
+<!-- START VM includeTabs.vm -->
+    <div id="Mrphs-sites-nav" class="siteNavWrap Mrphs-container Mrphs-container--navs">
+        <nav id="linkNav" aria-label="Los sitios empiezan aquí" class="Mrphs-sitesNav" data-max-tools-int="10" data-max-tools-anchor="Ver todas ...">
+    <div id="show-all-sites" tabindex="-1"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span>Todos los sitios</span></div>
+
+    <div id="topnav_container">
+        <ul class="Mrphs-sitesNav__menu" id="topnav">
+            <li class="Mrphs-sitesNav__menuitem  is-selected ">
+                <a class="link-container" href="https://poliformat.upv.es/portal/site/!gateway-es" title="Castellano">
+                    <span>Castellano</span></a>
+                <a class="Mrphs-sitesNav__dropdown" href="#" data-site-id="!gateway-es" aria-haspopup="true" title="Abrir el menú adjunto de Castellano para acceder a sus herramientas"></a></li>
+            <li class="Mrphs-sitesNav__menuitem ">
+                <a class="link-container" href="https://poliformat.upv.es/portal/site/!gateway-ca" title="Valencia">
+                    <span>Valencia;</span></a>
+                        <a class="Mrphs-sitesNav__dropdown" href="#" data-site-id="!gateway-ca" aria-haspopup="true" title="Abrir el menú adjunto de Valencia; para acceder a sus herramientas"></a>
+                    </li>
+                    <li class="Mrphs-sitesNav__menuitem ">
+                        <a class="link-container" href="https://poliformat.upv.es/portal/site/!gateway-en" title="English">
+                            <span>English</span></a>
+                        <a class="Mrphs-sitesNav__dropdown" href="#" data-site-id="!gateway-en" aria-haspopup="true" title="Abrir el menú adjunto de English para acceder a sus herramientas"></a>
+                    </li>
+        </ul>
+    </div>
+
+    </nav> <!-- /Mrphs-sitesNav -->
+
+    </div> <!-- /end of div.tabsCssClass -->
+
+    <!-- END VM includeTabs.vm -->
+
+    <!-- START VM includePageWithNav.vm -->
+
+    <div id="pageBody">
+
+        <!-- START VM includePageNav.vm -->
+
+        <div id="toolMenuWrap" class="Mrphs-container Mrphs-container--nav-tools"  scrollingToolbarEnabled >
+
+        <!--Añade esta comprobacion para asegurarte de que no tienes /img en la page -->
+        <div id="toolSubsitesContainer">
+            <nav id="toolMenu" role="navigation" aria-label="Las herramientas empiezan aquí" class="Mrphs-toolsNav__menu">
+                <h2 class="skip" tabindex="-1" id="totoolmenu">Las herramientas empiezan aquí</h2>
+                    <ul><li>
+                        <a class="Mrphs-toolsNav__menuitem--link "
+                            href="https://poliformat.upv.es/portal/site/!gateway-es/tool/4bd36fed-4d79-4d97-a044-f5c1b72f2339"
+                            title="Inicio - Para crear, organizar y publicar módulos de contenido y secuencias, como por ejemplo semanales."></a>
+        <div class="Mrphs-toolsNav__menuitem--icon icon-sakai--sakai-lessonbuildertool"></div>
+            <div class="Mrphs-toolsNav__menuitem--title">Inicio</div>
+                <div class="Mrphs-toolsNav__menuitem--status-block"></div>
+        </li>
+
+        <li><a class="Mrphs-toolsNav__menuitem--link "
+                href="https://poliformat.upv.es/portal/site/!gateway-es/page/9221fd28-84a9-4ab4-96b5-34a4b42bdb30"
+                title="PoliformaT apps - Para enlazar con recursos internos o sitios web externos">
+        <div class="Mrphs-toolsNav__menuitem--icon icon-sakai--sakai-iframe"></div>
+        <div class="Mrphs-toolsNav__menuitem--title">PoliformaT apps</div>
+        <div class="Mrphs-toolsNav__menuitem--status-block"></div>                                                                                                                                                                                                            <li >
+            </li><a class="Mrphs-toolsNav__menuitem--link "
+                    href="javascript:;"
+                    onclick="window.open('https://wiki.upv.es/confluence/pages/viewpage.action?pageId=758448162#')"
+                    title="Novedades ultima version de PoliformaT - Para enlazar con recursos internos o sitios web externos">
+        <div class="Mrphs-toolsNav__menuitem--icon icon-sakai--sakai-iframe"></div>
+            <div class="Mrphs-toolsNav__menuitem--title">Novedades ultima version de PoliformaT</div>
+                <div class="Mrphs-toolsNav__menuitem--status-block"></div>
+                </a></li>                                                                                                                                                                                                                                                                <li >
+                <a class="Mrphs-toolsNav__menuitem--link "
+                    href="https://poliformat.upv.es/portal/site/!gateway-es/page/d943470d-f2a9-4d14-a20f-08ef1d42a900"
+                    title="Incidencias - Para enlazar con recursos internos o sitios web externos">
+        <div class="Mrphs-toolsNav__menuitem--icon icon-sakai--sakai-iframe "></div>
+            <div class="Mrphs-toolsNav__menuitem--title">Incidencias</div>
+                <div class="Mrphs-toolsNav__menuitem--status-block"></div>
+                    <li class="is-current">
+                        <a class="Mrphs-toolsNav__menuitem--link "
+                            href="https://poliformat.upv.es/portal/site/!gateway-es/tool-reset/351c5e3d-c2e5-45ba-b34b-8814e7e01e27"
+                                title="Identificarse - Herramienta de selecion de forma de identificación en poliformaT"
+                                aria-current="page">
+        <div class="Mrphs-toolsNav__menuitem--icon icon-sakai--upv-login  icon-active "></div>
+        <div class="Mrphs-toolsNav__menuitem--title">Identificarse</div>
+        <div class="Mrphs-toolsNav__menuitem--status-block"></div>
+        </a></li>
+            <li id="toolsNav-toggle-li" class="Mrphs-toolsNav__menuitem Mrphs-collapseTools  max ">
+                <button type="button" aria-pressed="false" title="Expandir/contraer navegación" class="Mrphs-toggleNav js-toggle-nav btn-link   max ">
+            <span class="fa fa-lg fa-angle-double-left" aria-hidden="true"></span>
+            <span class="sr-only">Expandir/contraer navegación</span></button>
+            </li></ul>
+    </nav>
+
+<!-- END VM includePageNav.vm -->
+
+    <div class="Mrphs-pagebody">
+        <nav class="Mrphs-siteHierarchy" aria-label="Navegación secundaria en la herramienta">
+            <div class="Mrphs-hierarchy--sites">
+            <span class="Mrphs-hierarchy--siteName $hasSubsitesClass" title="Castellano">
+                <a href="https://poliformat.upv.es/portal/site/!gateway-es/tool-reset/4bd36fed-4d79-4d97-a044-f5c1b72f2339">
+                    <span class="Mrphs-hierarchy--siteName-label">Castellano</span>
+                </a>
+            </span>
+            <!-- Separadores en la jerarquia de procesos-->
+            <span class="Mrphs-hierarchy--siteNameSeparator Mrphs-hierarchy--separator"><i class="fa fa-lg fa-angle-right" aria-hidden="true"></i></span>
+
+            <!-- START VM includePageBody.vm- Problema-->
+            <a href="https://poliformat.upv.es/portal/site/!gateway-es/tool-reset/351c5e3d-c2e5-45ba-b34b-8814e7e01e27"
+            title="Página de inicio de la herramienta" class="Mrphs-hierarchy-item Mrphs-hierarchy--toolName">
+                <span class="Mrphs-breadcrumb--reset-icon bi-arrow-counterclockwise" aria-hidden="true"></span>
+                <span class="Mrphs-breadcrumb--icon icon-sakai--upv-login "></span>
+                <span class="Mrphs-breadcrumb--toolNameText">Identificarse</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- START VM includePageBody.vm -->
+    <main id="content" class="Mrphs-mainContent " role="main">
+        <h2 class="skip" tabindex="-1" id="tocontent">Los contenidos empiezan aquí</h2>
+        <div id="col1" class="Mrphs-pageColumns Mrphs-pageColumns--single">
+                    <!-- start Tool Container -->
+                    <div class="Mrphs-container Mrphs-upv-login">
+
+                    <!-- start Tool Header -->
+                            <div class="Mrphs-toolTitleNav Mrphs-container--toolTitleNav">
+                                <h2 class="Mrphs-toolTitleNav__title">
+                                    <a href="https://poliformat.upv.es/portal/site/!gateway-es/tool-reset/351c5e3d-c2e5-45ba-b34b-8814e7e01e27" title="Página de inicio de la herramienta: Identificarse">
+                                        <span class="Mrphs-toolTitleNav__link Mrphs-toolTitleNav__link--reset"></span>
+                                        <span class="Mrphs-toolTitleNav__text">Identificarse</span>
+                                    </a>
+                                        <span class="Mrphs-toolTitleNav__addLeft"></span>
+                                </h2>
+                                <div class="Mrphs-toolTitleNav__button_container ">
+                                    <span class="Mrphs-toolTitleNav__addRight"></span>
+                                    <button class="Mrphs-toolTitleNav__link Mrphs-toolTitleNav__link--directurl" rel="#Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_directurl" title="Enlace directo a esta herramienta" aria-haspopup="dialog">
+                                        <span class="Mrphs-itemTitle">Enlace</span>
+                                    </button>
+                                    <div id="Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_directurl" role="dialog" aria-labelledby="Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_directurl__title" class="Mrphs-directUrl Mrphs-directUrl__dropDown">
+                                        <i class="fa fa-times dropDown_close" aria-hidden="true" tabindex="0"></i>
+                                        <label for="Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_urlholder" id="Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_directurl__title" class="dropDown_title">Enlace directo a esta herramienta</label>
+
+                                            <input tabindex="0" type="checkbox" id="directToolUrl-1" onclick="toggleShortUrlOutput('https://poliformat.upv.es/portal/directtool/351c5e3d-c2e5-45ba-b34b-8814e7e01e27/', this, 'Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_urlholder');" class="Mrphs-directUrl__checkbox"><label for="directToolUrl-1">Acortar URL</label>
+                                        <textarea name="Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_urlholder" id="Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_urlholder" tabindex="0" class="Mrphs-directUrl__textarea Main351c5e3dxc2e5x45baxb34bx8814e7e01e27_urlholder" >https://poliformat.upv.es/portal/directtool/351c5e3d-c2e5-45ba-b34b-8814e7e01e27/</textarea>
+                                    </div>
+
+                                    <sakai-maximise-button ></sakai-maximise-button>
+                                </div>
+                            </div>
+                    <!-- END Tool Header -->
+
+                    <!-- START Tool Body -->
+                        <!-- Buffered Body Tool Content -->
+
+        <div class="portletBody">
+            <iframe height="600" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="https://poliformat.upv.es/portal/xlogin" />
+                    </div>
+                        <!-- End Buffered Body Tool Content -->
+                    <!-- end Tool Body -->
+                    </div>
+                    <!-- end Tool Container -->
+        </div>
+    </main> <!-- END of main.Mrphs-mainContent -->
+
+    <!-- END VM includePageBody.vm -->
+        <div class="Mrphs-container Mrphs-container--footer">
+
+        <!-- Inicio del FOOTER -->
+        <footer id="footer" role="contentinfo" class="Mrphs-footer">
+            <ul id="footer-links" class="Mrphs-footer--nav">
+                <li><span><a href="https://poliformat.upv.es/portal/site/!gateway-es">PoliformaT</a></span></li>
+                <li><span><a href="https://www.upv.es/" target="_blank">UPV</a></span></li>
+                <li class="Mrphs-footer--details">
+                    <a id="Mrphs-footer--details__info" class="fa fa-info-circle" href="#" aria-label="Detalles del servidor" aria-describedby="Mrphs-footer--details__panel-description" data-toggle="popover" title="PoliformaT 22.x" data-placement="top"><span class="sr-only">Detalles del servidor</span></a>
+                    <div id="Mrphs-footer--details__panelTemplate" class="is-hidden">
+                        <div class="Mrphs-footer--details__panel">
+                            <div id="Mrphs-footer--details__panel-description" class="sr-only">Este panel contiene información sobre el servidor que se puede usar para solucionar problemas. El panel puede incluir la hora del servidor, su hora local, el nombre del servidor y la información de compilación.</div>
+                            <dl>
+                                <dt class="Mrphs-footer--details__server-time">Hora del servidor:</dt>
+                                    <dd id="serverTime" class="Mrphs-footer--server-time" data-servertzdisplay="CET" data-serverdateandgmtoffset="1701172219457"></dd>
+                                        <dt>Servidor:</dt>
+                                        <dd>sako2.upv.es</dd>
+                                        <dt>Información de SW:</dt>
+                                        <dd>poliformaT</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="Mrphs-footer--project">
+                <ul id="Mrphs-footer--poweredBy">
+                    <li>
+                        <a href="https://www.sakailms.org/" target="_blank" class="external__link">
+                            <img class="Mrphs-footer--poweredby__image" src="/library/image/transparent.gif" alt="Powered by Sakai" /><span class="skip external">(Abrir en una nueva ventana)</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="Mrphs-footer--copyright">Copyright 2003-2023 The Sakai Foundation. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div class="Mrphs-container Mrphs-container--extras"></div>
+        <div id="tutorial" class="Mrphs-tutorial Mrphs-modal"></div>
+        <div id="social-alerts" class="Mrphs-tutorial Mrphs-modal"></div>
+
+</div>
+<!-- END VM includePageWithNav.vm -->
+        </div> <!-- end Mrphs-portalWrapper -->
+            <!-- END VM site.vm -->
+
+            <!-- Viewport helpers -->
+            <div id='Mrphs-viewport-helpers' aria-hidden='true'>
+                <div class='phone'></div>
+                <div class='tablet'></div>
+                <div class='desktop'></div>
+            </div>
+
+            <script>
+            var needJQuery = true; //variables locales activada 10000
+            var secondJQuery = false;
+            var notJQuery = false;
+            var dollarEmpty = false;
+            var dollarVersion = false; //Actualizar las versiones
+
+            // Salta la ventana. Accede por destino.
+            if ( window.$ ) {
+                if ( window.$.fn && window.$.fn ) {
+                    dollarVersion = window.$.fn.jquery;
+                } else {
+                    //Inicialización, carga, lista vacia.
+                    dollarVersion = 'not jQuery';
+                    window.console && console.log('Dollar is defined but is not jQuery');
+                    window.console && console.log($);
+                     //Just have it reload this other $ afterward
+                    notJQuery = true;
+                }
+            } else {
+                //acceso a la cuarta variable.
+                dollarEmpty = true;
+                dollarVersion = 'not present';
+                if ( window.jQuery ) {
+                    // Prueba que no haya conflictos
+                    window.console && console.log('tool called jQuery.noConflict()');
+                }
+            }
+            if ( window.jQuery ) {
+                tver = jQuery.fn.jquery; //Actualiza la version
+                if ( tver.indexOf('1.12.') == 0 ) { //Acceso a memoria
+                    window.console && console.log('Using tool jQuery ' + tver);
+                    needJQuery = false; //vaciado de la variable
+                } else {
+                    secondJQuery = true; //Activa la segunda variable
+                }
+            }
+            // Si esta activo la variable
+            if ( needJQuery ) { //Escribe los files en función de los recursos
+                document.write('script src="/library/webjars//jquery/1.12.4/jquery.min.js?version=20231114">'+'script>')
+                document.write('script src="/library/webjars/jquery-migrate/1.4.1/jquery-migrate.min.js?version=20231114">'+'script>')
+                document.write('script src="/library/webjars/bootstrap/3.3.7/js/bootstrap.min.js?version=20231114">'+'/script>')
+                document.write('script src="/library/webjars/jquery-ui/1.12.1/jquery-ui.min.js?version=20231114">'+'/script>')
+                document.write('link rel="stylesheet" href="/library/webjars/jquery-ui/1.12.1/jquery-ui.min.css?version=20231114"/>')
+                // Si esta activo el toque de las pantallas en la Interface User
+                if (Modernizr.touch) {
+                    document.write('script type="text/javascript" src="/library/webjars/jquery-ui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js?version=20231114">'+'/script>')
+                }
+                window.console && console.log('Portal scripts loaded JQ+MI+BS+UI');
+            //Si no esta activo el needJQuery, haces una migracion de errores,
+            //quitas los pop-up, puede que este activa la UI
+            } else {
+                if (typeof jQuery.migrateWarnings == 'undefined') {
+                    //Activas el script a traves del fichero
+                    document.write('script type="text/javascript" src="/library/webjars/jquery-migrate/1.4.1/jquery-migrate.min.js?version=20231114">'+'/script>')
+                    window.console && console.log('Portal adding jQuery migrate');
+                }
+                if ( typeof jQuery.fn.popover == 'undefined') {
+                    document.write('script type="text/javascript" src="/library/webjars/bootstrap/3.3.7/js/bootstrap.min.js?version=20231114">'+'/script>')
+                    window.console && console.log('Portal adding Bootstrap');
+                }
+                if (typeof jQuery.ui == 'undefined') {
+                    document.write('script type="text/javascript" src="/library/webjars/jquery-ui/1.12.1/jquery-ui.min.js?version=20231114">'+'/script>')
+                    document.write('link rel="stylesheet" href="/library/webjars/jquery-ui/1.12.1/jquery-ui.min.css?version=20231114"/>')
+                    window.console && console.log('Portal adding jQuery UI');
+                }
+                // Si esta activo el raton y ademas el protipo por sensor de movimiento
+                if (typeof jQuery.ui == 'undefined' || (typeof jQuery.ui.mouse != 'undefined' && typeof jQuery.ui.mouse.prototype._touchStart == 'undefined')) {
+                    document.write('script type="text/javascript" src="/library/webjars/jquery-ui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js?version=20231114">'+'/script>')
+                    //Accedes a la UI a traves del dispositivo.
+                    window.console && console.log('Portal adding jQuery UI Touch Punch for touch device support');
+                }
+            }
+            </script>
+
+
+        <script>
+            $PBJQ = jQuery; // The Portal's jQuery (also in $ for now)-> Variable global: Apunta por destino.
+        </script>
+
+        <script>
+            if (typeof Handlebars == 'undefined') { //Si esta activo el manejador
+                document.write('\script src="/library/webjars/handlebars/4.0.6/handlebars.runtime.min.js?version=20231114">/script>');
+            }
+        </script>
+        <script src="/library/templates.js?version=20231114"></script>
+        <script src="/library/js/trimpath-template-latest.js?version=20231114"></script>
+        <script src="/library/js/jquery/bgiframe/jquery.bgiframe.min.js?version=20231114"></script>
+        <script src="/library/js/jquery/cluetip/1.2.10/jquery.cluetip.min.js?version=20231114"></script>
+        <script>
+            if (typeof jQuery.i18n == 'undefined') { //Si hay una injección i18n
+                document.write('script src="/library/webjars/jquery-i18n-properties/1.2.2/jquery.i18n.properties.min.js?version=20231114">/script>');
+            }
+        </script>
+        <script src="/library/js/jquery/jquery.clearsearch.js?version=20231114"></script>
+        <script src="/library/skin/morpheus-gateway/js/morpheus.scripts.min.js?version=20231114"></script>
+
+        <script src="/library/webjars//pnotify/4.0.0/dist/iife/PNotify.js?version=20231114"></script>
+        <script src="/library/webjars//pnotify/4.0.0/dist/iife/PNotifyButtons.js?version=20231114"></script>
+        <script>includeWebjarLibrary("qtip2");</script>
+        <script src="/library/js/jquery/qtip/tutorial.js?version=20231114"></script>
+        <script src="/library/webjars/cropper/4.1.0/dist/cropper.min.js?version=20231114"></script>
+
+        <!-- Estructura modular con VM cuando estan activos los permisos, la version y el button en el lado del cliente-->
+        <script type="module" src="/webcomponents/sakai-permissions.js?version=20231114"></script>
+        <script type="module" src="/webcomponents/sakai-search.js?version=20231114"></script>
+        <script type="module" src="/webcomponents/sakai-maximise-button.js?version=20231114"></script>
+
+        <script>
+            // variable de activacion a traves del puerto
+            var sakaiPortalWindow = "";
+            // Accedes por destino al documento y activas la funcion
+            $PBJQ(document).ready(function() {
+                setupSkipNav(); //Actualizas o reboot uno o varios navegadores
+            });
+        </script>
+
+        <script>
+            // Si cargamos el segundo jQuery, accedes por redireccion al primer jQuery
+            if ( secondJQuery ) {
+                $PBJQ = jQuery.noConflict(true);
+                if ( !dollarEmpty && !notJQuery ) jQuery = $;  // Return jQuery to point at the tool jQuery
+            }
+            if (notJQuery && !secondJQuery) {
+                $PBJQ = jQuery.noConflict(true); // Safely return $ to the tool jQuery
+                //Activa el segundo jQuery si no existe en inicio
+                jQuery = $PBJQ;
+            }
+            window.console && console.log('Portal script load complete PBJQ='+$PBJQ.fn.jquery+' jQuery='+jQuery.fn.jquery+' $='+dollarVersion);
+
+            $PBJQ(document).ready(function() {
+                setupSiteNav();
+                });
+        </script>
+
+        <script>
+        function portal_check_pnotify() {
+            $PBJQ.getJSON( "/direct/portal/notify.json", function( data ) {
+                for(i=0; i<data.error.length; i++ ) {
+                    $PBJQ(function(){
+                        PNotify.defaults.styling = 'bootstrap3';
+                        PNotify.defaults.icons = 'fontawesome4';
+                        PNotify.alert({
+                            title: 'Aviso',
+                            text: data.error[i],
+                            type: 'notice'
+                        });
+                    });
+                }
+            });
+        }
+        </script>
+
+        <script src="/library/js/caps-lock-checker.js?version=20231114"></script>
+
+        <script src="/portal/scripts/jumptotop.js?version=20231114"></script>
+            <script src="/portal/scripts/themeswitcher.js?version=20231114"></script>
+
+        <link href="/pasystem-tool/stylesheets/pasystem.css?version;20231114" rel="stylesheet" property="stylesheet" type="text/css">
+
+        <script>
+
+        function paSystemJQueryOK() {
+            //Funcion que permite trabajar con pages PULL en versiones de JQuery
+            if (!window.jQuery) {
+                /* No hay ventana de JQuery*/
+                return false;
+            }
+            //Comprueba la version a traves del parseo de enteros
+            var version_numbers = jQuery.fn.jquery.split('.');
+            /* >= 1.9+ */
+            return (parseInt(version_numbers[0]) > 1) || (parseInt(version_numbers[0]) == 1 && parseInt(version_numbers[1]) >= 9);
+        }
+        //si esta activo escribe unos ficheros a partir de los script
+        if (paSystemJQueryOK()) {
+            document.write('script src="/pasystem-tool/scripts/pasystem.js?version;20231114">/script>');
+            document.write('script>includeWebjarLibrary(\'featherlight\')/script>');
+            // Actualizacion de la variable del sistema cuando esta cargada
+            var pasystem = pasystem || {'loaded': true};
+        } else {
+            //si no estas logueado carga desde el JQuery no soportado
+            console.log("PASystem not loaded for this page because jQuery is missing or unsupported.");
+        }
+        </script>
+
+        <!-- Banner y carpeta templates-->
+        <!-- Si se producen alertas por el identificador o el mensaje, se pierde
+         la alerta o referencia al principio del fichero-->
+        <script id="pasystemBannerAlertsTemplate" type="text/template">
+            <div class="pasystem-banner-alert pasystem-banner-${type}" id="${id}">
+            <span class="pasystem-banner-alert-message">${message}</span>
+            {if dismissible}
+                <a class="pasystem-banner-alert-close" href="javascript:void(0)">
+                <span class="sr-only">Dismiss Alert</span>
+                </a>
+            {/if}
+            </div>
+        </script>
+
+        <script id="pasystemBannerAlertsToggleTemplate" type="text/template">
+            <li class="pasystem-banner-alert-toggle-list-item">
+            <a href="javscript:void(0)" class="pasystem-banner-alert-toggle">Mostrar alertas del sistema</a>
+            </li>
+        </script>
+
+        <script>
+            if (pasystem) {
+                pasystem['banners'] = new PASystemBannerAlerts([], "");
+            }
+        </script>
+
+        <!-- Diseño modular Ver plantillas o variables de entorno, comprueba la zona horaria a partir de una url-->
+        <script id="timezoneBannerTemplate" type="text/template">
+            <span>
+                La zona horaria de su ordenador <span class="computerTimezone">${reportedTimezone}</span> no coincide con la zona horaria de su cuenta <span class="prefsTimezone">${prefsTimezone}</span>.
+                <span class="pasystem-tz-click-here"><a href="${setTimezoneUrl}" id="setTimezoneMsg">Pinche aquí para actualizar su zona horaria</a></span>.
+            </span>
+        </script>
+
+        <script>
+            if (pasystem) {
+                new PASystemTimezoneChecker().checkTimezone();
+            }
+        </script>
+
+        <!-- START VM includeCookieNotice.vm -->
+
+        <!-- END VM includeCookieNotice.vm -->
+
+        <div id="maximised-indicator">
+            <div>
+                <a href="javascript:;">Pulse para salir de pantalla completa</a>
+            </div>
+        </div>
+    </body>
+</html>
